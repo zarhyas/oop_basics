@@ -1,6 +1,6 @@
 package com.ensa.projects.oop.B;
 
-public class MyArrayList {
+public class MyArrayList<T> {
     private Object[] elements;
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
@@ -13,18 +13,18 @@ public class MyArrayList {
         return size;
     }
 
-    public void add(Object o) {
+    public void add(T o) {
         if (size == elements.length) {
             ensureCapacity();
         }
         elements[size++] = o;
     }
 
-    public Object get(int index) {
+    public T get(int index) {
         if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        return elements[index];
+        return (T) elements[index];
     }
 
     private void ensureCapacity() {
