@@ -9,6 +9,10 @@ public class MyArrayList {
         this.elements = new Object[DEFAULT_CAPACITY];
     }
 
+    public int getSize(){
+        return size;
+    }
+
     public void add(Object o) {
         if (size == elements.length) {
             ensureCapacity();
